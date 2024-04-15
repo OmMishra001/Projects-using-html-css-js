@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #inputbox {
+    border: 2px solid black;
+    padding: 5px 25px;
+  }
+</style>
+
+<body>
+  <div class="container h-screen  w-full bg-zinc-900  flex justify-center items-center">
+    <div class="box bg-white rounded-xl w-80 min-h-80 flex flex-col justify-evenly items-center">
+      <p class="-ml-8 font-bold">Enter your text or URl</p>
+      <input id="inputbox" type="text" placeholder="Text or Url" class="w-52 text-sm transition-all ease-in-out">
+      <div id="imgbox">
+        <img src="" id="qrimage">
+      </div>
+      <button onclick="Generateqr()"
+        class="px-9 py-2 rounded-md transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 animate-bounce">Generate
+        QR
+        Code</button>
+    </div>
+  </div>
+
+  <script>
+    let imgbox = document.getElementById("imgbox");
+    let qrimage = document.getElementById("qrimage");
+    let inputbox = document.getElementById("inputbox");
+
+
+    function Generateqr() {
+      if (inputbox.value.length > 0) {
+        qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + inputbox.value;
+        console.log(qrimage.src)
+
+      }
+
+    }
+  </script>
+</body>
+
+</html>
