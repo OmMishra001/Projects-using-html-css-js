@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Methods</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #head {
+            height: 500px;
+            width: 500px;
+            border: 5px solid red;
+        }
+        .buttons{
+            /* border: 2px solid blue; */
+            /* height: 100px; */
+            /* width: 200px; */
+            display: flex;
+            justify-content: space-evenly;
+            position: fixed;
+            left: 10px;
+            top: 50%;
+        }
+        .btn{
+            border: 2px solid blueviolet;
+            padding: 10px 20px;
+            height: 50px ;
+            width: 80px;
+            margin: 20px 10px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jquery</h1>
+
+    <h1 id="head">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore molestias beatae fugit modi quam, nesciunt
+            autem ut ullam incidunt aliquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, tempore
+            quo id consequuntur officiis voluptates ducimus dicta architecto vero excepturi error cum, laudantium
+            sapiente sequi hic nam magnam. Cupiditate, vero.</p>
+    </h1>
+    <div class="buttons">
+        <button id="show" class="btn">show</button>
+        <button id="hide" class="btn">hide</button>
+
+    </div>
+
+
+    <script src="/js try/jquery-3.7.1.min.js"></script>
+    <script>
+        $('#show').click(function(){
+            $('#head').fadeIn()
+        })
+        $('#hide').click(function(){
+            $('#head').fadeOut()
+        })
+        
+        
+        </script>
+
+</body>
+
+</html>

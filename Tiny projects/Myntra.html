@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping For Women,Men,Kids Fashion & Lifestyle - Myntra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Teko:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: border-box;
+            font-family: 'Comic Neue';
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Teko:wght@300;400;500;600;700&display=swap');
+
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .navbar {
+            height: 90px;
+            width: 100%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 50px;
+        }
+
+        .img-logo {
+            height: 45px;
+            width: 45px;
+        }
+
+        .img-logo img {
+            height: 100%;
+        }
+
+        .navbar .categories a {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+            font-size: 13px;
+            margin: 0px 14px;
+        }
+
+        .navbar .categories a sup {
+            color: red;
+            font-weight: bold;
+        }
+
+        .navbar .search-bar {
+            height: 20px;
+            width: 510px;
+            /* border: 2px solid red; */
+            padding: 21px 0px;
+            display: flex;
+            align-items: center;
+            background-color: #F5F5F6;
+            border-radius: 5px;
+        }
+
+        .navbar .search-bar i {
+            padding: 0px 15px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        .navbar .search-bar input {
+            border: none;
+            opacity: 0.7;
+            width: 100%;
+            background: transparent;
+        }
+
+        .navbar .account {
+            height: 45px;
+            width: 150px;
+            /* border: 2px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: bold;
+            opacity: 0.7;
+            background-size: cover;
+        }
+
+
+        .navbar .account>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 33.33%;
+        }
+
+        .navbar .account i {
+            padding-bottom: 5px;
+        }
+
+        .second-header {
+            height: 60px;
+            width: 100%;
+            font-weight: 600;
+            color: black;
+            /* border:2px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #E4ECFF);
+            padding: 0px 550px;
+
+        }
+
+        .second-header p {
+            font-size: 12px;
+
+        }
+
+        .second-header pre {
+            font-size: 16px;
+            opacity: 0.8;
+            font-weight: lighter;
+
+        }
+
+        .second-header h2 {
+            font-size: 23px;
+            color: #FF3F6C;
+        }
+
+        /* .first-pic{
+             
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-----navbar--start--- -->
+
+    <nav class="navbar">
+        <div class="img-logo"><img src="myntra-1200x900 (1).webp"></div>
+        <div class="categories">
+            <a href="#">MEN</a>
+            <a href="#">WOMEN</a>
+            <a href="#">KIDS</a>
+            <a href="#">HOME & LIVING</a>
+            <a href="#">BEAUTY</a>
+            <a href="#">STUDIO<sup> new</sup></a>
+        </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search for products,brands and more">
+        </div>
+        <div class="account">
+            <div class="profile"><i class="fa-solid fa-user"></i>Profile</div>
+            <div class="wishlist"><i class="fa-regular fa-heart"></i>Wishlist</div>
+            <div class="bag"><i class="fa-solid fa-bag-shopping"></i>Bag</div>
+        </div>
+    </nav>
+
+    <!-- ---navbar---closed--- -->
+
+    <div class="second-header">
+        <pre>Year-End Bash Ends In   </pre>
+        <h2 id="clockday">00</h2>
+        <p>Days</p>:<h2 id="clockhour">00</h2>
+        <p>H</p>:<h2 id="clockminute">00</h2>
+        <p>M</p>:<h2 id="clocksecond">00</h2>
+        <p>S</p>
+    </div>
+
+    <div class="first-pic">
+
+    </div>
+
+    <h1> <a href="test-1.html" onclick="time_out()">time_out1</a></h1>
+
+
+
+    <script>
+        function clocktimer() {
+            let time = new Date("12-26-2023");
+            let d = time.getDay();
+            let h = time.getHours();
+            let m = time.getMinutes();
+            let s = time.getSeconds();
+            let ctime = new Date();
+            let ch = ctime.getHours();
+            let cm = ctime.getMinutes();
+            let cs = ctime.getSeconds()
+            let day = d;
+
+
+            let hour = ch - h;
+            let minute = cm - m;
+            let second = cs - s;
+
+            // if (hour > 12) {
+            //     hour = hour - 12;
+            // }
+
+            hour = hour < 10 ? "0" + hour : hour;
+            minute = minute < 10 ? "0" + minute : minute;
+            second = second < 10 ? "0" + second : second;
+
+            document.getElementById("clockday").innerHTML = day;
+            document.getElementById("clockhour").innerHTML = hour;
+            document.getElementById("clockminute").innerHTML = minute;
+            document.getElementById("clocksecond").innerHTML = second;
+
+        }
+        setInterval(clocktimer, 1000);
+
+
+        function time_out1() {
+
+            window.location = "https://www.myntra.com/"
+            // body.document.write("you will redirected in next 2 seconds")
+        }
+
+        setTimeout(function () {
+            time_out1();
+        }, 5000);
+
+    </script>
+</body>
+
+</html>

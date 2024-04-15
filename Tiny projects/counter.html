@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .box {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: rgb(0, 0, 0, 0.6); */
+
+        }
+
+        .card {
+            height: 70%;
+            width: 35%;
+            /* border: 2px solid red; */
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-evenly; */
+            align-items: center;
+            background-color: #F1F5F8;
+            /* font-size: 30px; */
+            /* filter: none;
+            filter: blur(5px);
+            filter: brightness(200%);
+            filter: contrast(200%);
+            filter: drop-shadow(8px 8px 10px gray);
+            filter: grayscale(100%);
+            filter: hue-rotate(90deg);
+            filter: invert(100%);
+            filter: opacity(30%);
+            filter: saturate(8);
+            filter: sepia(100%);
+            filter: contrast(200%) brightness(150%); */
+        }
+        
+        .heading {
+            font-size: 40px;
+            margin: 20px 0px;
+        }
+        
+        .inputbtn {
+            transition: 1.5s all ease-in-out;
+            font-size: 50px;
+            margin: 20px 0px;
+            color: green;
+        }
+
+        .buttons button {
+            padding: 10px 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-top: 60px;
+            margin-left: 20px;
+            /* font-size: 20px; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <!-- <h1>hello</h1> -->
+        <div class="card" id="card">
+            <div class="heading">
+                <h1 id="head">Counter</h1>
+            </div>
+            <div class="inputbtn">
+                <h1 id="count">0</h1>
+            </div>
+            <div class="buttons">
+                <button id="decrease">DECREASE</button>
+                <button id="reset">RESET</button>
+                <button id="increase">INCREASE</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let count = document.querySelector('#count');
+        let decrease = document.querySelector('#decrease');
+        let reset = document.querySelector('#reset');
+        let increase = document.querySelector('#increase');
+        let inputbtn = document.querySelector('.inputbtn');
+        // let card = document.querySelector('#card');
+        // let head = document.querySelector('#head');
+
+        let value = 0;
+
+        increase.addEventListener('click',()=>{
+            value++;
+            count.innerHTML = value;
+            inputbtn.style.color = 'red';
+            // document.body.style.backgroundColor = 'red';
+            // card.style.backgroundColor = 'blue';
+        })
+        decrease.addEventListener('click',()=>{
+            value--;
+            count.innerHTML = value;
+            inputbtn.style.color = 'red';
+            // document.body.style.backgroundColor = 'blue';
+            // card.style.backgroundColor = 'red';
+        })
+        reset.addEventListener('click',()=>{
+            value = 0;
+            count.innerHTML = value;
+            inputbtn.style.color = 'green';
+           
+        })
+    </script>
+</body>
+
+</html>

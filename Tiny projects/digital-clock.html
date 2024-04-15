@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif
+        }
+
+        .conatiner {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            /* display: grid; */
+            /* grid-template-columns: (3,10px); */
+            /* grid-template-rows: (3,10px); */
+            /* grid-template-rows: (3,10px);
+            grid-template-columns: (3,10px); */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+        .conatiner button{
+            width: 17vw;
+            margin-top: 5vh;
+            font-size: 5vw;
+            background-color: red;
+            color: white;
+            border-radius: 1.1vw;
+            box-shadow: 0vw 0vw 3vw;
+            border: 0.5vw solid white;
+            animation: anime 2s linear infinite;
+        }
+        
+        
+        .clock {
+            /* height: 30vh; */
+            width: 60vw;
+            border: 0.5vw solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5vw;
+            box-shadow: 0vw 0vw 3vw;
+            border-radius: 1.1vw;
+            
+            /* animation: anime 2s linear infinite; */
+
+        }
+        /* @keyframes anime{
+           0%{
+            transform: rotate(0deg);
+           }
+           25%{
+            transform: rotate(30deg);
+           }
+           50%{
+            transform: rotate(-0deg);
+           }
+           75%{
+            transform: rotate(-30deg);
+           }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="clock">
+            <h1 id="clock1">Click Start</h1>
+        </div>
+        <button onclick="clock1()">START</button>
+
+        <!-- <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text"> -->
+    </div>
+
+    <script>
+        
+        
+        function clock() {
+            let clock1 = document.getElementById('clock1');
+            console.log(clock1.textContent);
+            let time = new Date();
+            let h = time.getHours();
+            let m = time.getMinutes();
+            let s = time.getSeconds();
+
+            let session = 'PM';
+
+            if (h > 12) {
+                h = h - 12;
+
+                // h = '0' + h;
+                session = 'PM';
+            }
+            else{
+                session = 'AM'
+            }
+
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            s = s < 10 ? '0' + s : s;
+
+            let clock3 = h + ':' + m + ':'+ s+' '+session;
+
+            console.log(clock3);
+            clock1.textContent = clock3;
+        }
+        
+        function clock1(){
+            setInterval(clock, 1000);
+
+        }
+    </script>
+</body>
+
+</html>

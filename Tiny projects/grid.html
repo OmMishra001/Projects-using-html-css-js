@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        .box{
+            display: grid;
+            grid-template-rows:100px 100px 100px ;
+            grid-template-columns: 100px 100px 100px;
+            justify-content: center;
+            /* align-items: center; */
+            /* align-items: center; */
+            /* border: 2px solid black; */
+            height: 42.8vh;
+            width: 19.5vw;
+        
+        }
+        .border-box{
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+        }
+        .border1,.border2,.border3{
+            border-top: none;
+        }
+        .border1,.border4,.border7{
+            border-left: none;
+        }
+        .border7,.border8,.border9{
+            border-bottom: none;
+        }
+        .border3,.border6,.border9{
+            border-right: none;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="border-box border1">
+            <h1>0</h1>
+        </span>
+        <span class="border-box border2">
+            <h1>x</h1>
+        </span>
+        <span class="border-box border3">
+            <h1>0</h1>
+        </span>
+        <span class="border-box border4">
+            <h1>x</h1>
+        </span>
+        <span class="border-box border5">
+            <h1>0</h1>
+        </span>
+        <span class="border-box border6">
+            <h1>x</h1>
+        </span>
+        <span class="border-box border7">
+            <h1>0</h1>
+        </span>
+        <span class="border-box border8">
+            <h1>x</h1>
+        </span>
+        <span class="border-box border9">
+            <h1>0</h1>
+        </span>
+    </div>
+</body>
+</html>

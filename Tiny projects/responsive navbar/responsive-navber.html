@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Online Web Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="W3Schools_2020_2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+}
+
+.navbar{
+    height: 70px;
+    width: 100%;
+    box-shadow: 0px 0px 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar .logo{
+    height: 70px;
+    width: 112px;
+
+}
+
+.navbar .logo img{
+    height: 100%;
+    width: 100%;
+}
+.navbar .inputbtn input:hover{
+
+    box-shadow: 0px 0px 5px rgb(0, 0, 0,0.8);
+}
+.navbar .inputbtn input{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.navbar .nav-menu{
+    height: 60px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    visibility: hidden;
+}
+.navbar .nav-menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.navbar .nav-menu a:hover{
+    box-shadow: 0px 0px 5px rgb(0, 0, 0,0.8);
+    /* visibility: visible; */
+
+}
+.navbar .others{
+    height: 70px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    
+}
+.navbar .others i:hover{
+    box-shadow: 0px 0px 5px rgb(0, 0, 0,0.8);
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="om-logo.jpg" alt="">
+        </div>
+        <div class="inputbtn">
+            <input type="button" value="CATEGORIES" onclick="button()">
+        </div>
+        <div class="nav-menu" id="menu">
+            <a href="https://www.w3schools.com/">HOME</a>
+            <a href="https://www.w3schools.com/html/default.asp">HTML</a>
+            <a href="https://www.w3schools.com/css/default.asp">CSS</a>
+            <a href="https://www.w3schools.com/js/default.asp">JAVASCRIPT</a>
+            <a href="https://www.w3schools.com/react/default.asp">REACT</a>
+        </div>
+        <div class="others">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-apple"></i>
+
+        </div>
+    </nav>
+
+   <script>
+    let mode = true;
+let menu= document.getElementById("menu");
+
+
+console.log(menu);
+
+function button() {
+    if (mode) {
+        menu.style.visibility = "visible"
+        mode = false;
+    }
+    else{
+        menu.style.visibility = "hidden"
+        mode = true;
+    }
+}
+
+   </script>
+</body>
+
+</html>

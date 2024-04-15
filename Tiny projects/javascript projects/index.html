@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th colspan="3"><input type="text" placeholder="00" id="input"></th>
+            <th><input class="button" type="button" value="C" onclick="clear()"></th>
+        </tr>
+        <tr>
+            <th><input class="button" type="button" value="1" onclick="button(1)"></th>
+            <th><input class="button" type="button" value="2" onclick="button(2)"></th>
+            <th><input class="button" type="button" value="3" onclick="button(3)"></th>
+            <th><input class="button" type="button" value="/" onclick="button('/')"></th>
+        </tr>
+        <tr>
+            <th><input class="button" type="button" value="4" onclick="button(4)"></th>
+            <th><input class="button" type="button" value="5" onclick="button(5)"></th>
+            <th><input class="button" type="button" value="6" onclick="button(6)"></th>
+            <th><input class="button" type="button" value="*" onclick="button('*')"></th>
+        </tr>
+        <tr>
+            <th><input class="button" type="button" value="7" onclick="button(7)"></th>
+            <th><input class="button" type="button" value="8" onclick="button(8)"></th>
+            <th><input class="button" type="button" value="9" onclick="button(9)"></th>
+            <th><input class="button" type="button" value="-" onclick="button('-')"></th>
+        </tr>
+        <tr>
+            <th><input class="button" type="button" value="." onclick="button('.')"></th>
+            <th><input class="button" type="button" value="0" onclick="button(0)"></th>
+            <th><input class="button" type="button" value="=" onclick="solve('=')"></th>
+            <th><input class="button" type="button" value="+" onclick="button('+')"></th>
+        </tr>
+    </table>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

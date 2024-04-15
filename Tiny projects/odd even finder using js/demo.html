@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .card
+        {
+            background-color: bisque;
+            width: 300px;
+            height: 350px;
+            /* position: relative; */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+        .content{
+            margin-top: 100px;
+           
+        }
+        .content>h1, .content>p{
+            text-align: center;
+        }
+        .content>h1{
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+        .number
+        {
+            text-align: center;
+            position: relative;
+            bottom: 200px;
+        }
+        button{
+            width: 120px;
+            height: 30px;
+            align-self: center;
+            position: relative;
+            bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="content">
+            <h1>my name</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, qui.</p>
+        </div>
+        <div class="number">
+            <h1>007</h1>
+        </div>
+        <button>Read More</button>
+    </div>
+    
+</body>
+</html>

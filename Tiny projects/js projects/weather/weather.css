@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  /* background-color: darkgrey; */
+  color: white;
+  /* background: linear-gradient(45deg , rgb(187, 255, 0),white); */
+  background: url('weather\ pic.jpg');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.container {
+  /* height: 500px; */
+  /* height: 25vw; */
+  width: 25vw;
+  height: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background: linear-gradient(45deg , rgb(187, 255, 0),white); */
+  border-radius: 20px;
+  box-shadow: 0vw 0vw 2vw;
+  backdrop-filter: blur(10px);
+}
+
+/* .container:hover{
+    color: red;
+    background-color: white;
+    box-shadow: 0px 0px 30px red;
+    background: linear-gradient(45deg , rgb(187, 255, 0),white);
+  } */
+.box {
+  height: 30vw;
+  /* width: 10vw; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  margin: 1vw;
+  /* box-shadow: 0vw 0vw 2vw; */
+  width: 20vw;
+  font-size: 1vw;
+  border-radius: 20px;
+  /* color: red; */
+  
+  
+  
+  /* background: linear-gradient(45deg , rgb(187, 255, 0),white); */
+}
+
+
+/* .box:hover{
+    color: red;
+    background-color: white;
+    box-shadow: 0px 0px 30px red;
+    background: linear-gradient(45deg , rgb(187, 255, 0),white);
+  } */
+button,h1,h2 {
+  padding: 0.8vw 4vw;
+  font-weight: 600;
+  font-size: 1.2vw;
+  border-radius: 0.6vw;
+  border: none;
+  box-shadow: 0.3vw 0.3vw 1.6vw;
+  margin: 1vw;
+  /* background: linear-gradient(45deg , orange,white); */
+  background-color: transparent;
+  color: white;
+  backdrop-filter: blue(10px);
+}
+
+button:active {
+  color: red;
+  /* background-color: white; */
+  box-shadow: 0px 0px 30px red;
+  backdrop-filter: blue(10px);
+}
+
+.inputbtn {
+  box-shadow: 0px 0px 30px rgb(0, 0, 0, 0.9);
+  border: none;
+  background-color: transparent;
+  padding: 0.8vw 0.5vw;
+  border-radius: 1vw;
+  font-size: 1.3vw;
+  text-align: center;
+  color: white;
+  text-align: left;
+  font-family: sans-serif;
+  
+
+}

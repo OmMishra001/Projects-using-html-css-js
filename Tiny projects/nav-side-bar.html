@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav-sider</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            display: flex;
+            border: 2px solid red;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 70px;
+            width: 100%;
+        }
+
+        .navbar .nav-list {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .navbar .nav-list .icon i {
+            font-size: 35px;
+        }
+
+        .navbar .nav-list .menu a {
+            margin: 0px 10px;
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .navbar .nav-list .menu{
+            margin-right: 290px;
+        }
+
+        .navbar .nav-list .inputbox input {
+            padding: 10px 200px;
+            position: absolute;
+            top: 60px;
+            left: 530px;
+            /* transition: 1s all ease-out; */
+            visibility: hidden;
+            font-size: 20px;
+            /* color: black; */
+            /* text-align: right; */
+        }
+
+        .side-nav {
+            height: 100%;
+            width: 265px;
+            /* border: 2px solid red; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            background: url('https://w0.peakpx.com/wallpaper/172/811/HD-wallpaper-portrait-display-vertical-stones-artwork-digital-art-thumbnail.jpg');
+            color: white;
+            visibility: hidden;
+           
+           
+        }
+        .side-nav input {
+            padding: 10px 15px;
+            width: 200px;
+            border: none;
+            transition: all 0.5s ease-in-out;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            background: transparent;
+            font-weight: 700;
+        }
+
+        .side-nav input:hover {
+            box-shadow: 0px 0px 50px rgb(0, 0, 0, 0.5);
+            border: 1px solid black;
+            
+        }
+
+        .side-nav .categorioes {
+            padding: 20px 15px;
+            width: 100%;
+            /* margin-bottom: 30px; */
+            /* border: 2px solid red; */
+            text-align: center;
+        }
+        .side-nav .categorioes a:hover{
+            box-shadow: 0px 0px 30px;
+
+        }
+        .side-nav .categorioes a {
+            /* border: 2px solid red; */
+            text-decoration: none;
+            color: white;   
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px 50px;
+            background: transparent;
+            background-color: transparent;
+        }
+        #icon{
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-list">
+            <div class="icon"> <i class='bx bx-slider' id="icon"></i></div>
+            <div class="menu">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#" id="searchbox">SEARCH</a>
+                <a href="#">SUPPORT</a>
+                <a href="#">PODCAST</a>
+                <div class="inputbox"><input type="text" placeholder="Search Here" id="inputbox"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="side-nav" id="side_nav">
+        <input type="text" placeholder="Search">
+        <div class="categorioes"><a href="#">HOME</a></div>
+        <div class="categorioes"><a href="#">ABOUT</a></div>
+        <div class="categorioes"><a href="#">SUPPORT</a></div>
+        <div class="categorioes margin"><a href="#">PODCAST</a></div>
+    </div>
+    
+    <script>
+        let searchbox = document.querySelector('#searchbox');
+        let inputbox = document.getElementById('inputbox');
+        let mode = true;
+        searchbox.addEventListener('click', () => {
+            if (mode) {
+                inputbox.style.visibility = 'visible';
+                mode = false;
+            }
+            else {
+                inputbox.style.visibility = 'hidden';
+                mode = true;
+
+            }
+        })
+        let icon  = document.getElementById('icon');
+        let side_nav = document.getElementById('side_nav');
+        
+        let mode1 = true;
+        icon.addEventListener('click', () => {
+            if (mode1) {
+                side_nav.style.visibility = 'visible';
+                // side_nav.style.transition = ' all 1s ease-out';
+                mode1 = false;
+            }
+            else {
+                side_nav.style.visibility = 'hidden';
+                mode1 = true;
+
+            }
+        })
+    </script>
+</body>
+
+</html>

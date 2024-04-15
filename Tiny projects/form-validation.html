@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <style>
+        body {
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        h2 {
+            margin: 0px 0px 10px 0px;
+
+        }
+
+        input {
+            width: 200px;
+            margin: 10px 0px;
+            padding: 10px;
+        }
+
+        .submit {
+            width: 222px;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .error {
+            color: red;
+            margin: 0px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>login</h2>
+        <form action="" onsubmit="return validateform()">
+            <input type="text" placeholder="username" id="username"><br>
+            <p id="usererror" class="error"></p>
+            <input type="password" placeholder="password" id="password"><br>
+            <p id="passerror" class="error"></p>
+            <input type="submit" class="submit">
+        </form>
+    </div>
+
+    <script>
+
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+
+        let temp =1;
+
+        function validateform() {
+
+            if (username.value == "") {
+                document.getElementById("usererror").innerHTML = "this can't be empty";
+                temp=0;
+            }
+
+            else if (username.value.length < 3) {
+                document.getElementById("usererror").innerHTML = "username minimum 3 character ";
+                temp=0;
+            }
+            else {
+                document.getElementById("usererror").innerHTML = "";
+                temp=1;
+            }
+
+            if (password.value=="") {
+                document.getElementById("passerror").innerHTML="password can't be empty";
+                temp=0;
+            }
+            
+            else{
+                document.getElementById("passerror").innerHTML="";
+                temp=1;
+            }
+
+        if (temp) {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

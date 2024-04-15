@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button><h1>Color Changer</h1></button>
+
+    <script>
+        let bdy = document.querySelector('body');
+        bdy.style.display = 'flex';
+        bdy.style.justifyContent = 'center';
+        bdy.style.alignItems = 'center';
+        bdy.style.height = '100vh';
+        bdy.style.width = '100%';
+        let btn = document.querySelector('button');
+        btn.style.border = 'none';
+        btn.style.backgroundColor = 'white';
+        btn.style.boxShadow = '5px 5px 15px rgb(0,0,0,0.4)'
+        btn.style.borderRadius = '10px'
+
+       btn.addEventListener('click',()=>{
+        let color1 = 'rgb('+color(255)+','+color(255)+','+color(255)+')';
+
+        console.log(color1);
+        
+        bdy.style.backgroundColor = color1;
+        btn.style.border = none;
+        // btn.style.padding = '1000px';
+       })
+
+       function color(number){
+        return Math.floor(Math.random()*(number+1));
+       }
+    </script>
+</body>
+</html>

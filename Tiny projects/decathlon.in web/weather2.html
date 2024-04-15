@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather forcast</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <input class="inputbtn" type="text" placeholder="Enter City Name Here">
+      <h1>Weather</h1>
+      <h1 id="location_city">City</h1>
+      <h1 id="temp1">Temp</h1>
+      <h2 id="clear1">Cloud</h2>
+      <h2 id="desc1">description</h2>
+    </div>
+    <button id="searchbtn">Search Here</button>
+  </div>
+
+  <script>
+    let searchbtn = document.getElementById('searchbtn');
+    let inputbtn = document.querySelector('input');
+    let temp1 = document.getElementById('temp1');
+    let location_city = document.getElementById('location_city');
+
+    let api = '168949eea6007dbadcc0fe0ced53bc1e';
+    let fcity; 
+   
+    searchbtn.addEventListener('click',()=>{
+       fcity = inputbtn.value;
+       document.getElementById('location_city').innerHTML = fcity;
+       getweather();
+    })
+
+   async function getweather(){
+        const Weatherurl = `https://api.openweathermap.org/data/2.5/weather?q=${fcity}&appid=${api}&units=metric`
+        const result = await fetch(Weatherurl);
+        const result2 = await result.json();
+        console.log(result2);
+        temp1.textContent = result2.main.temp+'C';
+        location_city.textContent = result2.name;
+    }
+  </script>
+ 
+</body>
+
+</html>

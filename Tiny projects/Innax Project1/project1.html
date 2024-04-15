@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            height: 100vh;
+            width: 95%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container nav {
+            width: 100%;
+            height: 4vw;
+            /* background-color: blue; */
+            margin-top: 2vw;
+            border: 2px solid darkgray;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container nav .logo {
+            height: 3rem;
+            width: 9rem;
+            margin-left: 1em;
+        }
+
+        .container nav .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container nav p {
+            font-weight: 600;
+            margin-left: 4em;
+        }
+
+        .container nav .searchbar {
+            border: 2px solid darkgray;
+            height: 2.4rem;
+            width: 40rem;
+            border-radius: 10px;
+            margin-left: 5em;
+            display: flex;
+            align-items: center;
+        }
+
+        .container nav .searchbar input {
+            width: 96%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            padding-left: 1em;
+            font-size: 16px;
+        }
+
+        .container nav .searchbar i {
+            font-size: 22px;
+            padding-left: 0.3em;
+            color: darkgray;
+        }
+
+        .accountinfo {
+            display: flex;
+            margin-left: 8em;
+            height: 100%;
+            align-items: center;
+            color: rgb(0, 123, 255);
+            /* font-size: 20px; */
+            background: linear-gradient(90deg, white, rgba(195, 220, 247, 0.847), white);
+        }
+
+        .accountinfo i {
+            font-size: 22px;
+        }
+
+        .accountinfo span {
+            margin: 0px 5px;
+            font-weight: 600;
+        }
+
+        .message {
+            margin-top: 1.5em;
+        }
+
+        .message2 {
+            align-items: center;
+            font-size: 14px;
+            margin-top: 2.5em;
+            display: flex;
+        }
+
+        .message2>i {
+            font-size: 22px;
+            margin-left: 0.3em;
+            font-weight: 400;
+        }
+
+        .container2 {
+            width: 100%;
+            /* background-color: lightcoral; */
+            display: flex;
+            /* align-items: center; */
+            /* justify-content: center; */
+            height: 100%;
+            /* overflow: scroll; */
+        }
+
+        .container2 .box1 {
+            height: 100%;
+            /* background-color: lightblue; */
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+        .container2 .box1 .searchbar2 {
+            height: 40px;
+            width: 420px;
+            /* border: 2px solid red; */
+            margin: 2.5em 2px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(125, 188, 255, 0.114);
+            border-radius: 10px;
+            /* margin-left: 2em; */
+        }
+
+        .container2 .box1 .searchbar2 i {
+            margin: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgba(8, 0, 255, 0.624);
+        }
+
+        .container2 .box1 .searchbar2 input {
+            border: none;
+            width: 100%;
+            height: 100%;
+            font-weight: 15px;
+            color: darkgray;
+            border-radius: 5px;
+            background-color: rgba(125, 188, 255, 0);
+
+        }
+
+        #dots {
+            font-size: 30px;
+        }
+
+        .container2 .box1 .box1-child {
+            /* border: 2px solid red; */
+            height: 150px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container2 .box1 .box1-child .childs {
+            display: flex;
+            /* border-bottom: 1px solid black; */
+            border-top: 1px solid darkgray;
+        }
+
+        .container2 .box1 .box1-child .childs:hover {
+            background-color: rgba(125, 188, 255, 0.114);
+        }
+
+        .container2 .box1 .box1-child .image-box {
+            display: flex;
+            /* align-items: center; */
+            height: 100%;
+            width: 20%;
+            /* border: 2px solid black; */
+        }
+
+        .container2 .box1 .box1-child .image-box img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin: 10px 2em;
+        }
+
+        .container2 .box1 .box1-child .image-info-box {
+            width: 100%;
+            height: 100%;
+            /* border: 2px solid red; */
+            /* background-color: red; */
+            padding: 20px 0px;
+
+        }
+
+        .container2 .box1 .box1-child .image-info-box .name-info i {
+            margin-left: 8em;
+            color: rgba(8, 0, 255, 0.624);
+        }
+
+        .container2 .box1 .box1-child .image-info-box p {
+            margin-top: 1em;
+            font-size: 14px;
+            color: darkgray;
+        }
+
+        .container2 .box1 .box1-child .image-info-box p i {
+            margin-top: 0.1em;
+            /* margin-bottom: 1em; */
+        }
+
+        /* **************************************************************** */
+        .container2 .box2 {
+            width: 65%;
+            /* background-color: antiquewhite; */
+            height: 100%;
+            position: relative;
+        }
+
+        .box2 .message-name {
+            height: 15%;
+            width: 100%;
+            /* border: 2px solid red; */
+            display: flex;
+            align-items: center;
+        }
+
+        .box2 .message-name img {
+            height: 50%;
+            width: 50px;
+            border-radius: 15px;
+            margin-left: 2em;
+            margin-right: 0.9em;
+            font-weight: 400;
+        }
+
+        .messages-box>h4 {
+            margin: 10px auto;
+            width: 150px;
+            /* border: 2px solid red; */
+            color: darkgray;
+        }
+
+        .messages-box .m1 {
+            width: 300px;
+            font-size: 14px;
+            position: absolute;
+            top: 140px;
+            left: 35px;
+        }
+
+        .messages-box .m1>p {
+            color: darkgray;
+        }
+
+        .messages-box .m1 .message1 {
+            padding: 10px 0px;
+            background-color: #DAE5FF;
+            border-radius: 30px;
+            padding: 10px 10px;
+        }
+
+        .messages-box .m2 {
+            width: 300px;
+            font-size: 14px;
+            position: absolute;
+            top: 240px;
+            right: 100px;
+            color: white;
+        }
+
+        .messages-box .m2 .message2 {
+            padding: 10px 0px;
+            background-color: rgb(0, 123, 255);
+            border-radius: 30px;
+            padding: 10px 10px;
+        }
+
+        .messages-box .m2>p {
+            color: darkgray;
+        }
+
+        .messages-box .m3 {
+            width: 300px;
+            font-size: 14px;
+            position: absolute;
+            top: 380px;
+            left: 35px;
+        }
+
+        .messages-box .m3 .message3 {
+            padding: 10px 0px;
+            background-color: #DAE5FF;
+            border-radius: 30px;
+            padding: 10px 10px;
+        }
+
+        .messages-box .m3>p {
+            color: darkgray;
+        }
+
+        .messages-box .m4 {
+            width: 300px;
+            font-size: 14px;
+            position: absolute;
+            top: 480px;
+            right: 100px;
+        }
+
+        .messages-box .m4 .message4 {
+            padding: 10px 0px;
+            background-color: rgb(0, 123, 255);
+            border-radius: 30px;
+            padding: 10px 10px;
+            color: white;
+        }
+
+        .messages-box .m4>p {
+            color: darkgray;
+        }
+
+        .messages-box .m5 {
+            width: 300px;
+            font-size: 14px;
+            position: absolute;
+            top: 620px;
+            left: 35px;
+        }
+
+        .messages-box .m5 .message5 {
+            padding: 10px 0px;
+            background-color: #DAE5FF;
+            border-radius: 30px;
+            padding: 10px 10px;
+            color: rgb(0, 123, 255);
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .messages-box .m5 .message5 img {
+            padding: 0px 2px;
+        }
+
+        .messages-box .m5 .message5>i {
+            font-size: 25px;
+        }
+
+        .messages-box .m5 p {
+            color: darkgray;
+        }
+
+        /* ************************************************************* */
+
+        .message-input {
+            /* border: 2px solid red; */
+            height: 60px;
+            width: 100%;
+            position: absolute;
+            top: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .message-input>i{
+            font-size: 30px;
+            color: rgb(0, 123, 255);
+        }
+        .message-input input{
+            font-size: 16px;
+            padding: 8px 90px;
+            border: none;
+            /* color: darkgray; */
+
+        }
+        .message-input>span{
+            color: rgb(0, 123, 255);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        #likebtn{
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="innax logo.png" alt="">
+            </div>
+            <p>Marketplace</p>
+            <div class="searchbar">
+                <i class='bx bx-search-alt-2'></i>
+                <input type="text" placeholder="Search for content creators">
+            </div>
+            <div class="accountinfo">
+                <i class='bx bxs-wallet'></i>
+                <span>12.24 MATIC</span>
+                <i class='bx bx-user-circle'></i>
+
+            </div>
+        </nav>
+
+        <h1 class="message">Messages</h1>
+
+        <h4 class="message2">All Messages<i class='bx bxs-chevron-down'></i></h4>
+
+        <div class="container2">
+            <div class="box1">
+                <div class="searchbar2">
+                    <i class='bx bx-search-alt-2'></i>
+                    <input type="text" placeholder="Search or start a new chat">
+                    <i class='bx bx-dots-vertical-rounded' id="dots"></i>
+                </div>
+                <div class="box1-child">
+                    <div class="childs">
+                        <div class="image-box">
+                            <img src="weather pic.jpg">
+                        </div>
+                        <div class="image-info-box">
+                            <h2 class="name-info">
+                                Om mishra<i class='bx bx-star'></i>
+                            </h2>
+                            <p>
+                                Hey! Did you finish the Hi-Fi wireframes for <br>
+                                flora app design?<br><br>
+                                <i class='bx bx-time'> Today | 05:30 PM</i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="childs">
+                        <div class="image-box">
+                            <img src="weather pic.jpg">
+                        </div>
+                        <div class="image-info-box">
+                            <h2 class="name-info">
+                                Om mishra<i class='bx bx-star'></i>
+                            </h2>
+                            <p>
+                                Hey! Did you finish the Hi-Fi wireframes for <br>
+                                flora app design?<br><br>
+                                <i class='bx bx-time'> Today | 05:30 PM</i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="childs">
+                        <div class="image-box">
+                            <img src="weather pic.jpg">
+                        </div>
+                        <div class="image-info-box">
+                            <h2 class="name-info">
+                                Om mishra<i class='bx bx-star'></i>
+                            </h2>
+                            <p>
+                                Hey! Did you finish the Hi-Fi wireframes for <br>
+                                flora app design?<br><br>
+                                <i class='bx bx-time'> Today | 05:30 PM</i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="childs">
+                        <div class="image-box">
+                            <img src="weather pic.jpg">
+                        </div>
+                        <div class="image-info-box">
+                            <h2 class="name-info">
+                                Om mishra<i class='bx bx-star'></i>
+                            </h2>
+                            <p>
+                                Hey! Did you finish the Hi-Fi wireframes for <br>
+                                flora app design?<br><br>
+                                <i class='bx bx-time'> Today | 05:30 PM</i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="childs">
+                        <div class="image-box">
+                            <img src="weather pic.jpg">
+                        </div>
+                        <div class="image-info-box">
+                            <h2 class="name-info">
+                                Om mishra<i class='bx bx-star'></i>
+                            </h2>
+                            <p>
+                                Hey! Did you finish the Hi-Fi wireframes for <br>
+                                flora app design?<br><br>
+                                <i class='bx bx-time'> Today | 05:30 PM</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="message-name">
+                    <img src="weather pic.jpg">
+                    <h3>Creator Name</h3>
+                </div>
+                <div class="messages-box">
+                    <h4>Today | 06:32 PM</h4>
+                    <div class="m1">
+                        <div class="message1">
+                            <p>Oh,hello All perfectly. <br> i will check it and get back to you soon</p>
+                        </div>
+                        <p>04:45 PM</p>
+                    </div>
+                    <div class="m2">
+                        <div class="message2">
+                            <p>Oh,hello All perfectly. <br> i will check it and get back to you soon</p>
+                        </div>
+                        <p>04:45 PM</p>
+                    </div>
+                    <div class="m3">
+                        <div class="message3">
+                            <p>Oh,hello All perfectly. <br> i will check it and get back to you soon</p>
+                        </div>
+                        <p>04:45 PM</p>
+                    </div>
+                    <div class="m4">
+                        <div class="message4">
+                            <p>Oh,hello All perfectly. <br> i will check it and get back to you soon</p>
+                        </div>
+                        <p>04:45 PM</p>
+                    </div>
+                    <div class="m5">
+                        <div class="message5">
+                            <i class='bx bx-play-circle'></i><img src="track.png">01:24
+                        </div>
+                        <p>04:45 PM</p>
+                    </div>
+
+                    <div class="message-input">
+                        <i class='bx bxs-smile'></i>
+                        <input type="text" placeholder="| Type your message here">
+                        <i class='bx bxs-message-square-add'></i>
+                        <span>Donate</span>
+                        <i class='bx bxs-microphone' ></i>
+                        <i class='bx bxs-like' id="likebtn" ></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
