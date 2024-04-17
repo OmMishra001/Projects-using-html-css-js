@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om's Music player</title>
+    <script src="https://kit.fontawesome.com/9e8ec2d710.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .music-player {
+            background: radial-gradient(circle, rgba(244, 129, 179, 1) 0%, rgba(72, 224, 230, 1) 100%);
+            width: 400px;
+            padding: 25px 35px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        nav .circle {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #fff;
+            color: rgba(244, 129, 179, 1);
+            box-shadow: 0px 5px 10px rgba(255, 26, 26, 0.22);
+            border: 2px solid rgba(244, 129, 179, 1);
+        }
+
+        .song-image {
+            width: 220px;
+            border-radius: 50%;
+            border: 8px solid rgba(244, 129, 179, 1);
+            box-shadow: 0px 10px 60px rgba(255, 26, 26, 0.22);
+        }
+
+        .music-player h1 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .music-player p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        #progress {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: rgba(244, 129, 179, 1);
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 40px 0px;
+        }
+
+        #progress::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background: rgba(244, 129, 179, 1);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0px 5px 5px rgba(255, 26, 26, 0.22);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .controls div {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            background: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: rgba(244, 129, 179, 1);
+            box-shadow: 0px 10px 20px rgba(255, 26, 26, 0.22);
+            cursor: pointer;
+            border: 2px solid rgba(244, 129, 179, 1);
+        }
+
+        .controls div:nth-child(2) {
+            transform: scale(1.5);
+            background: rgba(244, 129, 179, 1);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <img src="readhead-kid-listening-to-music-his-headphones-dancing-to-his-favorite-song-readhead-kid-listening-to-music-dancing-132077126.webp"
+                class="song-image">
+            <h1>12 Saal</h1>
+            <p>Bilal Saeed</p>
+            <audio id="song">
+                <source src="12 Saal(MP3_160K).mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+
+            <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playpause()"><i class="fa-solid fa-play" id="controlicon"></i></div>
+                <div><i class="fa-solid fa-forward"></i> </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("song");
+        let controlicon = document.getElementById("controlicon");
+
+        song.onloadedmetadata = function () {
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+        }
+
+        function playpause() {
+            if (controlicon.classList.contains("fa-pause")) {
+                song.pause();
+                controlicon.classList.remove("fa-pause");
+                controlicon.classList.add("fa-play");
+            } else {
+                song.play();
+                controlicon.classList.add("fa-pause");
+                controlicon.classList.remove("fa-play");
+            }
+        }
+
+        if (song.play()) {
+            setInterval(() => {
+                progress.value = song.currentTime;
+            }, 500)
+        }
+        progress.onchange = function () {
+            song.play();
+            song.currentTime = progress.value;
+            controlicon.classList.add("fa-pause");
+            controlicon.classList.remove("fa-play");
+        }
+    </script>
+</body>
+
+</html>
